@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../open-cards-main-old/src/main/java/com/magenta/maxoptra/ord/beans/importservice/impl/exceptions/ImportParseException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/Application.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ChildComponent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/DemoApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/SimpleBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/AbstractComponent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/Application.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/ChildComponent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/MySimpleEvent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/SimpleBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/SomeBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/TransactionBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/repository/CountryRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/rest/MyJaxRsResource.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/ApplicationException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/CustomRollbackProxyTransactionManagementConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/ExceptionRollback.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/MyCheckedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/MyException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/MyProxyTransactionManagementConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/MyUncheckedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/MyUnchekedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/TransactionBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/TransactionalBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/UnRollboackedUnchekedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/UncheckedExceptionWithRollbackFalse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/UnchekedExceptionWithRollbackFalse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/CheckedExceptionWithRollbackTrue.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/MyCheckedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/MyUncheckedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/UncheckedExceptionWithRollbackFalse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/ChildComponentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/com/example/ChildComponentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/com/example/TransactionBeanTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/com/example/TransactionalBeanTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../demo/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/ChildComponent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/SimpleBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../demo/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../demo/src/test/java/com/example/demo/ChildComponentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../demo/src/test/java/com/example/demo/SimpleTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/cdi/listener/APIListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/service/TaskResultTypesServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/service/impl/CollectorsAccountsService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/web/api/stores/ActivityResultConsumers.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/web/api/stores/ActivityScreens.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/web/api/stores/ActivityTypes.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/collectors/web/api/stores/JCRAPIBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ejb/CustomerAttributeService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ejb/ResourceAttributeService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ejb/attribute/AttributeCache.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ejb/impl/ORDAccountModificator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/MobileLogsSimpleDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GTAccountModificator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/importxml/GPXGroupParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/lifecycle/actions/order/AbstractSyncLifecycleOrderAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/CardService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/CustomerLocationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/GTConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/GTScheduleService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/impl/BulkChangeServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/impl/CardServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/impl/ScreenplayServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/impl/SnapshotCallerServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/impl/TaskServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/preplanning/ResourcePlanningQueueManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/services/GeoZonesService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/CTSchedule.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/CTScheduleBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/CTVehicles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/CTVehiclesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/CustomerLocations.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/CustomerLocationsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/DriverManifestColumn.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTAlertTableBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTAreaOfControlsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTCustomerLocations.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTCustomerLocationsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTDriverManifest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTDriverManifestBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTFilesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTPlanFactBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTRegions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTRegionsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTVehiclesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GeoZones.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GeoZonesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/IssuesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/MobileLogsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/PerformersBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/ProposalsFLBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/ResourcesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/ScheduleTableBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/SignatureBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/SnapshotBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/UserSettingsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/integration/api/schedule/v2/engineers/APISchedules.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/service/AccountConfigurationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/service/FormattersRegistry.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/service/impl/AbstractAccountModificator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/service/impl/ApplicationTemplateRegistryImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/service/impl/UserSettingsServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/web/api/stores/ApplicationTemplates.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/management/web/api/stores/MobileClientsBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/mobile/impl/TreeAtivityDownloaderImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/mobileapi/api/SyncApi.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/mobileapi/api/SyncApiBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/lifecycle/impl/LifecycleServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/lifecycle/listener/LifecycleEventListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/AreaOfControlService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/DispatchSheetService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/ResourceAvailabilityService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/VehicleCardsFacade.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/impl/AbstractResourceCards.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/impl/AlertsServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/impl/AreaOfControlServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/impl/DeviceManagerServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/impl/OrderSettingsServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/ordejbtemplate/template/concrete/CollectorsTemplate.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/service/AreaOfControlConfigurationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/service/impl/AbstractServiceBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/snapshot/util/SnapshotInfoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/snapshot/util/SnapshotsHelperService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/socketio/CommunicationServiceOnline.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/socketio/SocketIOServerBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/socketio/SocketIOSessionAuth.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/socketio/SocketIOSessionAuthFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/tool/ejb/impl/GeocodeWorkerImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/tracking/ejb/PathWorker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/utils/TimeUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/SessionHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/filters/UserStoreInitializerFilter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/Accounts.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/AreasOfControlBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/Countries.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/Notifications.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/Regions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/SeTypes.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/ordejbapi/stores/Search.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/dao/AbstractDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/dao/entity/GenericAuditedDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/dao/entity/GenericDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/dao/impl/PerformerConfigDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/dao/impl/ResourceTypeDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/ejb/impl/ORDObjectsProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/exception/ExceptionRollback.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/exception/ExceptionRollbackStrategy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/exception/IServiceException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/exception/NonStopUIMessageException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/exception/TransactionExecutorException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/exception/UIMessageException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/filters/CacheFilter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/ConsolidationToolDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/SEMobileTaskDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/ConsolidationToolDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/CustomerDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/CustomerLocationDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/EtaDaoBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/GeoZoneDaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/MobileIssueDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/MobileLogsDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/MobileLogsSimpleDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/MobileResourceDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/PlanFactDAOImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/dao/impl/SEMobileTaskDaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GTAlertFilter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GTAlertFilterFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GTObjectsProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GTTemplateConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GTTransferExecutor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GeoTrackingEntityManagerProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GeozoneReceiverFilter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/GeozoneReceiverFilterFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/ReceiverHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/ejb/impl/ReceiverHelperFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/forecasting/impl/ForecastingServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/importxml/ControlZoneGroupParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/lifecycle/actions/order/AbstractLifecycleOrderAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/lifecycle/actions/order/AbstractSyncLifecycleOrderAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/lifecycle/actions/order/UnallocateOrderAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/scheduler/exception/ResourceNotFoundException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/scheduler/exception/SuggestVariantsNotFoundException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/delegate/impl/LandmarkTypeValidator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/delegate/impl/PlanFactZoneServiceDelegateImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/service/delegate/impl/SEPlanFactZoneServiceDelegateImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/delegate/impl/CTScheduleHelperDelegateImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTAlertTableBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/geotracking/web/api/stores/GTVehiclesBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/integration/api/v2/helper/CustomerLocationRecordValidator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/integration/service/impl/AbstractBeanService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/ord/beans/service/delegate/AbstractDAODelegate.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/persistence/EntityManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/service/common/error/ValidateException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/service/config/CustomRollbackProxyTransactionManagementConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/service/impl/AbstractServiceBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/socketio/handlers/SocketIOHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/tracking/jmx/DataEntry.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/utils/TxExecutor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../working/open-cards-main/src/main/java/com/magenta/maxoptra/web/api/delegate/impl/OrdersBeanDelegateImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

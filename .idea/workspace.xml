@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a5970370-88db-470a-a7cd-d33c0e9a87c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/SpringBasics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBasics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/AbstractComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ChildComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/MySimpleEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SimpleBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/SomeBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repository/CountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rest/MyJaxRsResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/CustomRollbackProxyTransactionManagementConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/ExceptionRollback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/TransactionalBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/CheckedExceptionWithRollbackTrue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/MyCheckedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/MyUncheckedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/transaction/exceptions/UncheckedExceptionWithRollbackFalse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/ChildComponentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/TransactionalBeanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/SpringBasics-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/AbstractComponent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/ChildComponent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/MySimpleEvent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/SimpleBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/SomeBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Country.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/repository/CountryRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/rest/MyJaxRsResource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/ApplicationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/CustomRollbackProxyTransactionManagementConfiguration$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/CustomRollbackProxyTransactionManagementConfiguration$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/CustomRollbackProxyTransactionManagementConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/TransactionalBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/exceptions/CheckedExceptionWithRollbackTrue.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/exceptions/MyCheckedException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/exceptions/MyUncheckedException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/transaction/exceptions/UncheckedExceptionWithRollbackFalse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/ChildComponentTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/TransactionalBeanTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZfD3Aws3hSh5PkWHZplAsmwnQb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.repository" />
+      <recent name="com.example.entity" />
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\peshne\IdeaProjects\samples\SpringBasics" />
+      <recent name="C:\Users\peshne\IdeaProjects\SpringBasics\src\main\resources" />
+      <recent name="C:\Users\peshne\IdeaProjects\SpringBasics\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TransactionalBeanTest">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Application" />
+      <module name="SpringBasics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChildComponentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBasics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.transaction.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.ChildComponentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransactionalBeanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringBasics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.TransactionalBeanTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TransactionalBeanTest" />
+        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.ChildComponentTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a5970370-88db-470a-a7cd-d33c0e9a87c5" name="Default Changelist" comment="" />
+      <created>1585221052173</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585221052173</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1188" y="144" width="1096" height="800" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585906988306">
+      <screen x="-1280" y="52" width="1280" height="984" />
+    </state>
+    <state x="-1188" y="144" width="1096" height="800" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585906988306" />
+    <state x="-1020" y="469" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585737928469">
+      <screen x="-1280" y="52" width="1280" height="984" />
+    </state>
+    <state x="-1020" y="469" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585737928469" />
+    <state x="-1164" y="379" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585221518597">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1164" y="379" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585221518597" />
+    <state x="-844" y="424" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1585737930966">
+      <screen x="-1280" y="52" width="1280" height="984" />
+    </state>
+    <state x="-844" y="424" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585737930966" />
+    <state x="676" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585910329514">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="676" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585910329514" />
+    <state x="-860" y="299" key="FileChooserDialogImpl" timestamp="1586094105867">
+      <screen x="-1280" y="52" width="1280" height="984" />
+    </state>
+    <state x="-860" y="299" key="FileChooserDialogImpl/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1586094105867" />
+    <state width="1877" height="389" key="GridCell.Tab.0.bottom" timestamp="1585918801373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="318" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585763092765" />
+    <state width="1877" height="389" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585918801373" />
+    <state width="1877" height="427" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585306592686" />
+    <state width="1877" height="389" key="GridCell.Tab.0.center" timestamp="1585918801373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="318" key="GridCell.Tab.0.center/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585763092765" />
+    <state width="1877" height="389" key="GridCell.Tab.0.center/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585918801373" />
+    <state width="1877" height="427" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585306592685" />
+    <state width="1877" height="389" key="GridCell.Tab.0.left" timestamp="1585918801373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="318" key="GridCell.Tab.0.left/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585763092765" />
+    <state width="1877" height="389" key="GridCell.Tab.0.left/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585918801373" />
+    <state width="1877" height="427" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585306592685" />
+    <state width="1877" height="389" key="GridCell.Tab.0.right" timestamp="1585918801373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="318" key="GridCell.Tab.0.right/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585763092765" />
+    <state width="1877" height="389" key="GridCell.Tab.0.right/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585918801373" />
+    <state width="1877" height="427" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585306592685" />
+    <state x="-1459" y="162" key="SettingsEditor" timestamp="1585221355156">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1459" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585221355156" />
+    <state x="468" y="237" width="983" height="567" key="find.popup" timestamp="1585918799283">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-968" y="276" width="655" height="536" key="find.popup/0.0.1920.1040/-1280.52.1280.984@-1280.52.1280.984" timestamp="1585738528829" />
+    <state x="468" y="237" width="983" height="567" key="find.popup/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585918799283" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585908171246">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.52.1280.984@0.0.1920.1040" timestamp="1585908171246" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585294284584" />
+  </component>
+</project>
