@@ -7,13 +7,24 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
 import org.springframework.context.event.EventListenerFactory;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.transaction.TestTransaction;
+import org.springframework.transaction.*;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.event.TransactionalEventListener;
+import org.springframework.transaction.event.TransactionalEventListenerFactory;
+import org.springframework.transaction.support.TransactionCallback;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import java.lang.annotation.*;
 import java.util.ArrayList;
@@ -27,11 +38,25 @@ import static org.junit.Assert.assertNotNull;
 @SpringBootTest
 @ContextConfiguration(classes = AnnotatedApplicationEventPublisherTest.TestConfig.class)
 public class AnnotatedApplicationEventPublisherTest {
+    Actor admin = AnnotationUtils.createAnnotation(Actor.class, "admin");
+    Actor manager = AnnotationUtils.createAnnotation(Actor.class, "manager");
+    Topic main = AnnotationUtils.createAnnotation(Topic.class, "main");
+    Topic dev = AnnotationUtils.createAnnotation(Topic.class, "dev");
+
     @Autowired
     private AnnotatedApplicationEventPublisher eventPublisher;
 
     @Autowired
     private EventListenerBean eventListenerBean;
+
+    @Autowired
+    private TransactionalEventListenerBean transactionalEventListenerBean;
+
+    /*@Autowired
+    private PlatformTransactionManager transactionManager;*/
+
+    /*@Autowired
+    private TestContext testContext;*/
 
     @Configuration
     public static class TestConfig {
@@ -47,25 +72,42 @@ public class AnnotatedApplicationEventPublisherTest {
         }
 
         @Bean
+        public TransactionalEventListenerBean getTransactionalEventListenerBean() {
+            return new TransactionalEventListenerBean();
+        }
+
+        @Bean
         public EventListenerFactory getEventListenerFactory() {
             return new AnnotatedEventListenerFactory();
         }
-    }
 
-
-    @Test
-    public void eventNotificationTest() {
-        assertNotNull(eventListenerBean);
-        assertNotNull(eventPublisher);
-        Actor admin = AnnotationUtils.createAnnotation(Actor.class, "admin");
-        Actor manager = AnnotationUtils.createAnnotation(Actor.class, "manager");
-        Topic main = AnnotationUtils.createAnnotation(Topic.class, "main");
-        Topic dev = AnnotationUtils.createAnnotation(Topic.class, "dev");
-        List<MessageEvent> events = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
-            events.add(new MessageEvent(i));
+        @Bean
+        public TransactionalEventListenerFactory getTransactionalEventListenerFactory() {
+            return new AnnotatedTransactionalEventListenerFactory();
         }
 
+       /* @Bean
+        public PlatformTransactionManager getPlatformTransactionManager() {
+            return new PlatformTransactionManager() {
+                @Override
+                public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
+                    return null;
+                }
+
+                @Override
+                public void commit(TransactionStatus status) throws TransactionException {
+
+                }
+
+                @Override
+                public void rollback(TransactionStatus status) throws TransactionException {
+
+                }
+            };
+        }*/
+    }
+
+    private void publishEvents(List<MessageEvent> events) {
         eventPublisher.publishEvent(events.get(0), admin);
         eventPublisher.publishEvent(events.get(1), manager);
         eventPublisher.publishEvent(events.get(2), manager, main);
@@ -75,28 +117,87 @@ public class AnnotatedApplicationEventPublisherTest {
         eventPublisher.publishEvent(events.get(6), dev);
         eventPublisher.publishEvent(events.get(7), main);
         eventPublisher.publishEvent(events.get(8));
-        eventPublisher.publishEvent("string event");
-        eventPublisher.publishEvent(new Object());
+        eventPublisher.publishEvent("string event", main);
+    }
+
+
+    private void publishEventsInTransaction(List<MessageEvent> events) {
+        publishEvents(events);
+    }
+
+    private List<MessageEvent> createMessageEvents(int count) {
+        List<MessageEvent> events = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            events.add(new MessageEvent(i));
+        }
+        return events;
+    }
+
+
+    @Test
+    public void testAnnotatedEventListenerBean() {
+        assertNotNull(eventListenerBean);
+        assertNotNull(eventPublisher);
+        List<MessageEvent> events = createMessageEvents(9);
+        publishEvents(events);
 
         //compare events number
-        assertEquals(3 , eventListenerBean.getAdminEvents().size());
-        assertEquals(3 , eventListenerBean.getManagerEvents().size());
-        assertEquals(3 , eventListenerBean.getDevTopicEvents().size());
-        assertEquals(3 , eventListenerBean.getMainTopicEvents().size());
-        assertEquals(1 , eventListenerBean.getManagerMainTopicEvents().size());
-        assertEquals(1 , eventListenerBean.getAdminDevTopicEvents().size());
-        assertEquals(9 , eventListenerBean.getAllMessageEvents().size());
+        assertEquals(3, eventListenerBean.getAdminEvents().size());
+        assertEquals(3, eventListenerBean.getManagerEvents().size());
+        assertEquals(3, eventListenerBean.getDevTopicEvents().size());
+        assertEquals(3, eventListenerBean.getMainTopicEvents().size());
+        assertEquals(1, eventListenerBean.getManagerMainTopicEvents().size());
+        assertEquals(1, eventListenerBean.getAdminDevTopicEvents().size());
+        assertEquals(9, eventListenerBean.getAllMessageEvents().size());
+        assertEquals(9, eventListenerBean.getAllAnnotatedEvents().size());
 
         //compare events content
-        assertEquals(Arrays.asList(events.get(0), events.get(4), events.get(5)) , eventListenerBean.getAdminEvents());
-        assertEquals(Arrays.asList(events.get(1), events.get(2), events.get(3)) , eventListenerBean.getManagerEvents());
-        assertEquals(Arrays.asList(events.get(3), events.get(5), events.get(6)) , eventListenerBean.getDevTopicEvents());
-        assertEquals(Arrays.asList(events.get(2), events.get(4), events.get(7)) , eventListenerBean.getMainTopicEvents());
-        assertEquals(Arrays.asList(events.get(5)) , eventListenerBean.getAdminDevTopicEvents());
-        assertEquals(Arrays.asList(events.get(2)) , eventListenerBean.getManagerMainTopicEvents());
+        assertEquals(Arrays.asList(events.get(0), events.get(4), events.get(5)), eventListenerBean.getAdminEvents());
+        assertEquals(Arrays.asList(events.get(1), events.get(2), events.get(3)), eventListenerBean.getManagerEvents());
+        assertEquals(Arrays.asList(events.get(3), events.get(5), events.get(6)), eventListenerBean.getDevTopicEvents());
+        assertEquals(Arrays.asList(events.get(2), events.get(4), events.get(7)), eventListenerBean.getMainTopicEvents());
+        assertEquals(Arrays.asList(events.get(5)), eventListenerBean.getAdminDevTopicEvents());
+        assertEquals(Arrays.asList(events.get(2)), eventListenerBean.getManagerMainTopicEvents());
         assertEquals(events, eventListenerBean.getAllMessageEvents());
     }
 
+    @Test
+    public void testTransactionalAnnotatedEventListenerBean() {
+        assertNotNull(transactionalEventListenerBean);
+        assertNotNull(eventPublisher);
+        
+
+        List<MessageEvent> events = createMessageEvents(9);
+        //TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
+        
+      /*  transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                publishEventsInTransaction(events);
+            }
+        });*/
+
+        publishEventsInTransaction(events);
+
+        //compare events number
+        assertEquals(3, transactionalEventListenerBean.getAdminEvents().size());
+        assertEquals(3, transactionalEventListenerBean.getManagerEvents().size());
+        assertEquals(3, transactionalEventListenerBean.getDevTopicEvents().size());
+        assertEquals(3, transactionalEventListenerBean.getMainTopicEvents().size());
+        assertEquals(1, transactionalEventListenerBean.getManagerMainTopicEvents().size());
+        assertEquals(1, transactionalEventListenerBean.getAdminDevTopicEvents().size());
+        assertEquals(9, transactionalEventListenerBean.getAllMessageEvents().size());
+        assertEquals(9, transactionalEventListenerBean.getAllAnnotatedEvents().size());
+
+        //compare events content
+        assertEquals(Arrays.asList(events.get(0), events.get(4), events.get(5)), transactionalEventListenerBean.getAdminEvents());
+        assertEquals(Arrays.asList(events.get(1), events.get(2), events.get(3)), transactionalEventListenerBean.getManagerEvents());
+        assertEquals(Arrays.asList(events.get(3), events.get(5), events.get(6)), transactionalEventListenerBean.getDevTopicEvents());
+        assertEquals(Arrays.asList(events.get(2), events.get(4), events.get(7)), transactionalEventListenerBean.getMainTopicEvents());
+        assertEquals(Arrays.asList(events.get(5)), transactionalEventListenerBean.getAdminDevTopicEvents());
+        assertEquals(Arrays.asList(events.get(2)), transactionalEventListenerBean.getManagerMainTopicEvents());
+        assertEquals(events, transactionalEventListenerBean.getAllMessageEvents());
+    }
 
     @Target({ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD})
     @Retention(RetentionPolicy.RUNTIME)
@@ -127,17 +228,16 @@ public class AnnotatedApplicationEventPublisherTest {
         private List<MessageEvent> mainTopicEvents = new ArrayList<>();
         private List<MessageEvent> devTopicEvents = new ArrayList<>();
         private List<MessageEvent> allMessageEvents = new ArrayList<>();
+        private List<AnnotatedEvent> allAnnotatedEvents = new ArrayList<>();
 
 
         @EventListener
         public void handleAdminEvent(@Actor("admin") MessageEvent event) {
-            System.out.println("receive admin event: " + event);
             adminEvents.add(event);
         }
 
         @EventListener
         public void handleManagerEvent(@Actor("manager") MessageEvent event) {
-            System.out.println("receive manager event: " + event);
             managerEvents.add(event);
         }
 
@@ -162,12 +262,67 @@ public class AnnotatedApplicationEventPublisherTest {
         }
 
         @EventListener
-        public void handleAllEvent(MessageEvent event) {
-            System.out.println("receive unqualified event: " + event);
+        public void handleAnyMessageEvent(MessageEvent event) {
             allMessageEvents.add(event);
         }
 
+        @EventListener
+        public void handleAnyAnnotatedEvent(AnnotatedEvent event) {
+            allAnnotatedEvents.add(event);
+        }
     }
 
+    @Getter
+    public static class TransactionalEventListenerBean {
+        private List<MessageEvent> adminEvents = new ArrayList<>();
+        private List<MessageEvent> managerEvents = new ArrayList<>();
+        private List<MessageEvent> adminDevTopicEvents = new ArrayList<>();
+        private List<MessageEvent> managerMainTopicEvents = new ArrayList<>();
+        private List<MessageEvent> mainTopicEvents = new ArrayList<>();
+        private List<MessageEvent> devTopicEvents = new ArrayList<>();
+        private List<MessageEvent> allMessageEvents = new ArrayList<>();
+        private List<AnnotatedEvent> allAnnotatedEvents = new ArrayList<>();
+
+
+        @TransactionalEventListener
+        public void handleAdminEvent(@Actor("admin") MessageEvent event) {
+            adminEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleManagerEvent(@Actor("manager") MessageEvent event) {
+            managerEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleAdminDevTopicEvent(@Actor("admin") @Topic("dev") MessageEvent event) {
+            adminDevTopicEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleManagerMainTopicEvent(@Actor("manager") @Topic("main") MessageEvent event) {
+            managerMainTopicEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleMainTopicEvent(@Topic("main") MessageEvent event) {
+            mainTopicEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleDevTopicEvent(@Topic("dev") MessageEvent event) {
+            devTopicEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleAnyMessageEvent(MessageEvent event) {
+            allMessageEvents.add(event);
+        }
+
+        @TransactionalEventListener
+        public void handleAnyAnnotatedEvent(AnnotatedEvent event) {
+            allAnnotatedEvents.add(event);
+        }
+    }
 
 }

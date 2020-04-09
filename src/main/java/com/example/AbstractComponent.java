@@ -10,9 +10,6 @@ import javax.annotation.PostConstruct;
 @Getter
 public abstract class AbstractComponent {
 
-    @Autowired
-    private SomeBean someBean;
-
     private String property;
 
     @PostConstruct

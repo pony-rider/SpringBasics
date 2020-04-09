@@ -17,9 +17,7 @@ public class ChildComponentTest {
     @Test
     public void test() {
         childComponent.fireSimpleEvent();
-        assertNotNull(childComponent.getEventListenerBean().getName());
         assertNotNull(childComponent.getProperty());
-        System.out.println(childComponent.getEventListenerBean().getName());
         System.out.println(childComponent.getProperty());
     }
 
