@@ -44,7 +44,7 @@ public class AnnotatedTransactionalApplicationEventListener extends ApplicationL
 
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
-        System.out.println("transactional event listener process event " + event);
+        System.out.println("transactional event listener enter on application event " + event);
         if (TransactionSynchronizationManager.isSynchronizationActive() &&
                 TransactionSynchronizationManager.isActualTransactionActive()) {
             TransactionSynchronization transactionSynchronization = createTransactionSynchronization(event);
@@ -64,6 +64,7 @@ public class AnnotatedTransactionalApplicationEventListener extends ApplicationL
 
     @Override
     public void processEvent(ApplicationEvent event) {
+        System.out.println("transactional event listener process event " + event);
         if (AnnotatedEvent.class.isAssignableFrom(event.getClass())) {
             AnnotatedEvent annotatedEvent = (AnnotatedEvent) event;
             boolean qualifiersMatches = AnnotationMatcher.qualifiersMatches(listenerQualifiers, annotatedEvent.getAnnotations());

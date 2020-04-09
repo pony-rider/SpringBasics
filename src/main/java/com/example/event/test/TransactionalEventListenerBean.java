@@ -20,7 +20,7 @@ class TransactionalEventListenerBean {
     private List<AnnotatedEvent> allAnnotatedEvents = new ArrayList<>();
 
 
-    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+   /* @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
     public void handleAdminEvent(@Actor("admin") MessageEvent event) {
         adminEvents.add(event);
     }
@@ -58,5 +58,5 @@ class TransactionalEventListenerBean {
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
     public void handleAnyAnnotatedEvent(AnnotatedEvent event) {
         allAnnotatedEvents.add(event);
-    }
+    }*/
 }

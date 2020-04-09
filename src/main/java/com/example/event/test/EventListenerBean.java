@@ -19,7 +19,7 @@ class EventListenerBean {
     private List<MessageEvent> allMessageEvents = new ArrayList<>();
     private List<AnnotatedEvent> allAnnotatedEvents = new ArrayList<>();
 
-
+/*
     @EventListener
     public void handleAdminEvent(@Actor("admin") MessageEvent event) {
         adminEvents.add(event);
@@ -58,5 +58,5 @@ class EventListenerBean {
     @EventListener
     public void handleAnyAnnotatedEvent(AnnotatedEvent event) {
         allAnnotatedEvents.add(event);
-    }
+    }*/
 }

@@ -14,6 +14,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.context.event.EventListenerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionException;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
@@ -36,19 +40,13 @@ public class AnnotatedApplicationEventPublisherTest {
     static Topic dev = AnnotationUtils.createAnnotation(Topic.class, "dev");
 
     @Autowired
-    private AnnotatedApplicationEventPublisher eventPublisher;
-
-    @Autowired
     private EventListenerBean eventListenerBean;
 
     @Autowired
     private TransactionalEventListenerBean transactionalEventListenerBean;
 
-    /*@Autowired
-    private PlatformTransactionManager transactionManager;*/
-
     @Autowired
-    private EventPublisherBean publisherBean;
+    private EventPublisherBean eventPublisherBean;
 
     @TestConfiguration
     public static class TestConfig {
@@ -83,10 +81,9 @@ public class AnnotatedApplicationEventPublisherTest {
             return new EventPublisherBean(publisher);
         }
 
-
        /* @Bean
         public PlatformTransactionManager transactionManager() {
-            return new PlatformTransactionManager() {
+            *//*return new PlatformTransactionManager() {
                 @Override
                 public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
                     return null;
@@ -99,42 +96,15 @@ public class AnnotatedApplicationEventPublisherTest {
                 @Override
                 public void rollback(TransactionStatus status) throws TransactionException {
                 }
-            };
+            };*//*
         }*/
-    }
-
-    private void publishEvents(List<MessageEvent> events) {
-        eventPublisher.publishEvent(events.get(0), admin);
-        eventPublisher.publishEvent(events.get(1), manager);
-        eventPublisher.publishEvent(events.get(2), manager, main);
-        eventPublisher.publishEvent(events.get(3), manager, dev);
-        eventPublisher.publishEvent(events.get(4), admin, main);
-        eventPublisher.publishEvent(events.get(5), admin, dev);
-        eventPublisher.publishEvent(events.get(6), dev);
-        eventPublisher.publishEvent(events.get(7), main);
-        eventPublisher.publishEvent(events.get(8));
-        eventPublisher.publishEvent("string event", main);
-    }
-
-    @Transactional
-    private void publishEventsInTransaction(List<MessageEvent> events) {
-        publishEvents(events);
-    }
-
-    private List<MessageEvent> createMessageEvents(int count) {
-        List<MessageEvent> events = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            events.add(new MessageEvent(i));
-        }
-        return events;
     }
 
     @Test
     public void testAnnotatedEventListenerBean() {
         assertNotNull(eventListenerBean);
-        assertNotNull(eventPublisher);
-        List<MessageEvent> events = createMessageEvents(9);
-        publishEvents(events);
+        List<MessageEvent> events = eventPublisherBean.createMessageEvents(9);
+        eventPublisherBean.publishEvents(events);
 
         //compare events number
         assertEquals(3, eventListenerBean.getAdminEvents().size());
@@ -157,14 +127,10 @@ public class AnnotatedApplicationEventPublisherTest {
     }
 
     @Test
-    //@Transactional
     public void testTransactionalAnnotatedEventListenerBean() {
         assertNotNull(transactionalEventListenerBean);
-        assertNotNull(eventPublisher);
-
-        List<MessageEvent> events = publisherBean.createMessageEvents(9);
-
-        publisherBean.publishEventsInTransaction(events);
+        List<MessageEvent> events = eventPublisherBean.createMessageEvents(9);
+        eventPublisherBean.publishEventsInTransaction(events);
 
         //compare events number
         assertEquals(3, transactionalEventListenerBean.getAdminEvents().size());
@@ -204,7 +170,6 @@ public class AnnotatedApplicationEventPublisherTest {
     public static class MessageEvent {
         private final int id;
     }
-
 
     @Getter
     public static class EventListenerBean {
