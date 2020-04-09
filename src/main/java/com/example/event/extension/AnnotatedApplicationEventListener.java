@@ -20,6 +20,7 @@ public class AnnotatedApplicationEventListener extends ApplicationListenerMethod
 
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
+        System.out.println("event listener process event " + event);
         if (AnnotatedEvent.class.isAssignableFrom(event.getClass())) {
             AnnotatedEvent annotatedEvent = (AnnotatedEvent) event;
             boolean qualifiersMatches = AnnotationMatcher.qualifiersMatches(listenerQualifiers, annotatedEvent.getAnnotations());

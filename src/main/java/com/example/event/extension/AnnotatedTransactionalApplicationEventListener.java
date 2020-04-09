@@ -2,6 +2,7 @@ package com.example.event.extension;
 
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.event.ApplicationListenerMethodAdapter;
+import org.springframework.core.ResolvableType;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
@@ -35,14 +36,23 @@ public class AnnotatedTransactionalApplicationEventListener extends ApplicationL
                 Arrays.asList(method.getParameterAnnotations()[0]) : Collections.emptyList();
     }
 
+    /*@Override
+    public boolean supportsEventType(ResolvableType eventType) {
+        System.out.println("supports " + super.supportsEventType(eventType) + " " + eventType.getSource().getClass());
+        return super.supportsEventType(eventType);
+    }*/
 
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
+        System.out.println("process event " + event + " " + (TransactionSynchronizationManager.isSynchronizationActive() &&
+                TransactionSynchronizationManager.isActualTransactionActive()));
         if (TransactionSynchronizationManager.isSynchronizationActive() &&
                 TransactionSynchronizationManager.isActualTransactionActive()) {
             TransactionSynchronization transactionSynchronization = createTransactionSynchronization(event);
             TransactionSynchronizationManager.registerSynchronization(transactionSynchronization);
+            System.out.println();
         } else if (this.annotation.fallbackExecution()) {
+            System.out.println("Processing fallback");
             if (this.annotation.phase() == TransactionPhase.AFTER_ROLLBACK && logger.isWarnEnabled()) {
                 logger.warn("Processing " + event + " as a fallback execution on AFTER_ROLLBACK phase");
             }
@@ -50,26 +60,16 @@ public class AnnotatedTransactionalApplicationEventListener extends ApplicationL
                 AnnotatedEvent annotatedEvent = (AnnotatedEvent) event;
                 boolean qualifiersMatches = AnnotationMatcher.qualifiersMatches(listenerQualifiers, annotatedEvent.getAnnotations());
                 if (qualifiersMatches) {
+                    System.out.println("qualifiers matches");
                     processEvent(event);
                 }
             } else {
                 if (listenerQualifiers.isEmpty()) {
+                    System.out.println("qualifiers matches");
                     processEvent(event);
                 }
             }
         } else {
-            //TODO: used only for test, later remove next if-else block
-            if (AnnotatedEvent.class.isAssignableFrom(event.getClass())) {
-                AnnotatedEvent annotatedEvent = (AnnotatedEvent) event;
-                boolean qualifiersMatches = AnnotationMatcher.qualifiersMatches(listenerQualifiers, annotatedEvent.getAnnotations());
-                if (qualifiersMatches) {
-                    processEvent(event);
-                }
-            } else {
-                if (listenerQualifiers.isEmpty()) {
-                    processEvent(event);
-                }
-            }
             // No transactional event execution at all
             if (logger.isDebugEnabled()) {
                 logger.debug("No transaction is active - skipping " + event);
@@ -92,7 +92,6 @@ public class AnnotatedTransactionalApplicationEventListener extends ApplicationL
 
         public TransactionSynchronizationEventAdapter(ApplicationListenerMethodAdapter listener,
                                                       ApplicationEvent event, TransactionPhase phase) {
-
             this.listener = listener;
             this.event = event;
             this.phase = phase;

@@ -1,31 +1,44 @@
 package com.example.event.extension;
 
 
+import com.example.entity.Country;
+import com.example.repository.CountryRepository;
 import lombok.Data;
 import lombok.Getter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.event.EventListener;
 import org.springframework.context.event.EventListenerFactory;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.transaction.TestContextTransactionUtils;
 import org.springframework.test.context.transaction.TestTransaction;
 import org.springframework.transaction.*;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 import org.springframework.transaction.event.TransactionalEventListenerFactory;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import javax.sql.DataSource;
 import java.lang.annotation.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +49,11 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+//@EnableAutoConfiguration
 @ContextConfiguration(classes = AnnotatedApplicationEventPublisherTest.TestConfig.class)
+//@TestConfiguration("AnnotatedApplicationEventPublisherTest.TestConfig.class")
+//@Import(AnnotatedApplicationEventPublisherTest.TestConfig.class)
+//@DataJpaTest
 public class AnnotatedApplicationEventPublisherTest {
     Actor admin = AnnotationUtils.createAnnotation(Actor.class, "admin");
     Actor manager = AnnotationUtils.createAnnotation(Actor.class, "manager");
@@ -52,11 +69,8 @@ public class AnnotatedApplicationEventPublisherTest {
     @Autowired
     private TransactionalEventListenerBean transactionalEventListenerBean;
 
-    /*@Autowired
-    private PlatformTransactionManager transactionManager;*/
-
-    /*@Autowired
-    private TestContext testContext;*/
+    @Autowired
+    private PlatformTransactionManager transactionManager;
 
     @Configuration
     public static class TestConfig {
@@ -81,13 +95,14 @@ public class AnnotatedApplicationEventPublisherTest {
             return new AnnotatedEventListenerFactory();
         }
 
-        @Bean
+       /* @Bean
         public TransactionalEventListenerFactory getTransactionalEventListenerFactory() {
             return new AnnotatedTransactionalEventListenerFactory();
-        }
+        }*/
 
-       /* @Bean
-        public PlatformTransactionManager getPlatformTransactionManager() {
+
+        @Bean
+        public PlatformTransactionManager transactionManager() {
             return new PlatformTransactionManager() {
                 @Override
                 public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
@@ -96,15 +111,13 @@ public class AnnotatedApplicationEventPublisherTest {
 
                 @Override
                 public void commit(TransactionStatus status) throws TransactionException {
-
                 }
 
                 @Override
                 public void rollback(TransactionStatus status) throws TransactionException {
-
                 }
             };
-        }*/
+        }
     }
 
     private void publishEvents(List<MessageEvent> events) {
@@ -121,6 +134,7 @@ public class AnnotatedApplicationEventPublisherTest {
     }
 
 
+    @Transactional
     private void publishEventsInTransaction(List<MessageEvent> events) {
         publishEvents(events);
     }
@@ -132,7 +146,6 @@ public class AnnotatedApplicationEventPublisherTest {
         }
         return events;
     }
-
 
     @Test
     public void testAnnotatedEventListenerBean() {
@@ -162,20 +175,12 @@ public class AnnotatedApplicationEventPublisherTest {
     }
 
     @Test
+
     public void testTransactionalAnnotatedEventListenerBean() {
         assertNotNull(transactionalEventListenerBean);
         assertNotNull(eventPublisher);
-        
 
         List<MessageEvent> events = createMessageEvents(9);
-        //TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
-        
-      /*  transactionTemplate.execute(new TransactionCallbackWithoutResult() {
-            @Override
-            protected void doInTransactionWithoutResult(TransactionStatus status) {
-                publishEventsInTransaction(events);
-            }
-        });*/
 
         publishEventsInTransaction(events);
 
@@ -284,42 +289,42 @@ public class AnnotatedApplicationEventPublisherTest {
         private List<AnnotatedEvent> allAnnotatedEvents = new ArrayList<>();
 
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleAdminEvent(@Actor("admin") MessageEvent event) {
             adminEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleManagerEvent(@Actor("manager") MessageEvent event) {
             managerEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleAdminDevTopicEvent(@Actor("admin") @Topic("dev") MessageEvent event) {
             adminDevTopicEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleManagerMainTopicEvent(@Actor("manager") @Topic("main") MessageEvent event) {
             managerMainTopicEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleMainTopicEvent(@Topic("main") MessageEvent event) {
             mainTopicEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleDevTopicEvent(@Topic("dev") MessageEvent event) {
             devTopicEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleAnyMessageEvent(MessageEvent event) {
             allMessageEvents.add(event);
         }
 
-        @TransactionalEventListener
+        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
         public void handleAnyAnnotatedEvent(AnnotatedEvent event) {
             allAnnotatedEvents.add(event);
         }
