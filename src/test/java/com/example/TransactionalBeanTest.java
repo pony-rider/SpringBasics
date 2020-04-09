@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
@@ -23,6 +25,11 @@ public class TransactionalBeanTest {
     @Autowired
     private CountryRepository countryRepository;
     private Country country = new Country(1L, "1", "1");
+
+    @TestConfiguration
+    public static class TestConfig {
+
+    }
 
     @Test
     public void testRollbackUncheckedException() {

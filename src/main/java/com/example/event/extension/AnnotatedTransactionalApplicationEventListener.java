@@ -44,35 +44,35 @@ public class AnnotatedTransactionalApplicationEventListener extends ApplicationL
 
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
-        System.out.println("process event " + event + " " + (TransactionSynchronizationManager.isSynchronizationActive() &&
-                TransactionSynchronizationManager.isActualTransactionActive()));
+        System.out.println("transactional event listener process event " + event);
         if (TransactionSynchronizationManager.isSynchronizationActive() &&
                 TransactionSynchronizationManager.isActualTransactionActive()) {
             TransactionSynchronization transactionSynchronization = createTransactionSynchronization(event);
             TransactionSynchronizationManager.registerSynchronization(transactionSynchronization);
-            System.out.println();
         } else if (this.annotation.fallbackExecution()) {
-            System.out.println("Processing fallback");
             if (this.annotation.phase() == TransactionPhase.AFTER_ROLLBACK && logger.isWarnEnabled()) {
                 logger.warn("Processing " + event + " as a fallback execution on AFTER_ROLLBACK phase");
             }
-            if (AnnotatedEvent.class.isAssignableFrom(event.getClass())) {
-                AnnotatedEvent annotatedEvent = (AnnotatedEvent) event;
-                boolean qualifiersMatches = AnnotationMatcher.qualifiersMatches(listenerQualifiers, annotatedEvent.getAnnotations());
-                if (qualifiersMatches) {
-                    System.out.println("qualifiers matches");
-                    processEvent(event);
-                }
-            } else {
-                if (listenerQualifiers.isEmpty()) {
-                    System.out.println("qualifiers matches");
-                    processEvent(event);
-                }
-            }
+            processEvent(event);
         } else {
             // No transactional event execution at all
             if (logger.isDebugEnabled()) {
                 logger.debug("No transaction is active - skipping " + event);
+            }
+        }
+    }
+
+    @Override
+    public void processEvent(ApplicationEvent event) {
+        if (AnnotatedEvent.class.isAssignableFrom(event.getClass())) {
+            AnnotatedEvent annotatedEvent = (AnnotatedEvent) event;
+            boolean qualifiersMatches = AnnotationMatcher.qualifiersMatches(listenerQualifiers, annotatedEvent.getAnnotations());
+            if (qualifiersMatches) {
+                super.processEvent(event);
+            }
+        } else {
+            if (listenerQualifiers.isEmpty()) {
+                super.processEvent(event);
             }
         }
     }

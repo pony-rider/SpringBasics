@@ -6,7 +6,7 @@ import org.springframework.transaction.event.TransactionalEventListenerFactory;
 
 import java.lang.reflect.Method;
 
-@Component
+//@Component
 public class AnnotatedTransactionalEventListenerFactory extends TransactionalEventListenerFactory {
     private static final int ORDER = 48;
 

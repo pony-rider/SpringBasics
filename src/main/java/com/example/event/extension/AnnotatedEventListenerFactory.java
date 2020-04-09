@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
-@Component
+//@Component
 public class AnnotatedEventListenerFactory extends DefaultEventListenerFactory {
     private static final int ORDER = 49;
 
