@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.event.ChildEvent;
+import com.example.event.MySimpleEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +16,11 @@ public class ChildComponent extends AbstractComponent {
         this.eventPublisher = eventPublisher;
     }
 
-    public void doSomething() {
+    public void fireSimpleEvent() {
         eventPublisher.publishEvent(new MySimpleEvent("event message"));
+    }
+
+    public void fireChildEvent() {
+        eventPublisher.publishEvent(new ChildEvent("event message"));
     }
 }

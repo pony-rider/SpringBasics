@@ -16,11 +16,13 @@ public class ChildComponentTest {
 
     @Test
     public void test() {
-        childComponent.doSomething();
-        assertNotNull(childComponent.getSomeBean().getName());
+        childComponent.fireSimpleEvent();
+        assertNotNull(childComponent.getEventListenerBean().getName());
         assertNotNull(childComponent.getProperty());
-        System.out.println(childComponent.getSomeBean().getName());
+        System.out.println(childComponent.getEventListenerBean().getName());
         System.out.println(childComponent.getProperty());
     }
+
+
 
 }

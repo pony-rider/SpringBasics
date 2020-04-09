@@ -1,14 +1,12 @@
 package com.example;
 
+import com.example.event.extension.AnnotatedEventListenerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
-import org.springframework.transaction.annotation.TransactionManagementConfigurer;
-
-import javax.transaction.TransactionManager;
 
 @SpringBootApplication
 public class Application {
@@ -16,6 +14,9 @@ public class Application {
     private ActionBean readAction;
     @Autowired
     private ActionBean writeAction;
+
+    @Autowired
+    private AnnotatedEventListenerFactory annotatedEventListenerFactory;
 
     @Bean
     public ActionBean readAction() {
