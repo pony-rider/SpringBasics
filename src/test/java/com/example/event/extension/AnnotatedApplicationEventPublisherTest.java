@@ -32,7 +32,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+//@SpringBootTest
+@SpringBootTest(classes= AnnotatedApplicationEventPublisherTest.TestConfig.class)
 @Import(AnnotatedEventListenerConfig.class)
 public class AnnotatedApplicationEventPublisherTest {
     static Actor admin = AnnotationUtils.createAnnotation(Actor.class, "admin");
