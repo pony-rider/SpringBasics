@@ -9,19 +9,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
-import org.springframework.context.event.EventListenerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionException;
-import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
-import org.springframework.transaction.event.TransactionalEventListenerFactory;
 
 import java.lang.annotation.*;
 import java.util.ArrayList;
@@ -52,11 +45,6 @@ public class AnnotatedApplicationEventPublisherTest {
     public static class TestConfig {
 
         @Bean
-        public AnnotatedApplicationEventPublisher getPublisher(ApplicationEventPublisher applicationEventPublisher) {
-            return new AnnotatedApplicationEventPublisherImpl(applicationEventPublisher);
-        }
-
-        @Bean
         public EventListenerBean getEventListenerBean() {
             return new EventListenerBean();
         }
@@ -67,37 +55,9 @@ public class AnnotatedApplicationEventPublisherTest {
         }
 
         @Bean
-        public EventListenerFactory getEventListenerFactory() {
-            return new AnnotatedEventListenerFactory();
-        }
-
-        @Bean
-        public TransactionalEventListenerFactory getTransactionalEventListenerFactory() {
-            return new AnnotatedTransactionalEventListenerFactory();
-        }
-
-        @Bean
         public EventPublisherBean eventPublisherBean(AnnotatedApplicationEventPublisher publisher) {
             return new EventPublisherBean(publisher);
         }
-
-       /* @Bean
-        public PlatformTransactionManager transactionManager() {
-            *//*return new PlatformTransactionManager() {
-                @Override
-                public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
-                    return null;
-                }
-
-                @Override
-                public void commit(TransactionStatus status) throws TransactionException {
-                }
-
-                @Override
-                public void rollback(TransactionStatus status) throws TransactionException {
-                }
-            };*//*
-        }*/
     }
 
     @Test
