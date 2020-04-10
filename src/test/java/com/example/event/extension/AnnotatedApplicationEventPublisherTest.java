@@ -1,19 +1,26 @@
 package com.example.event.extension;
 
 
+import com.example.repository.CountryRepository;
 import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.event.EventListener;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.transaction.TestTransaction;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 
 import java.lang.annotation.*;
@@ -26,6 +33,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Import(AnnotatedEventListenerConfig.class)
 public class AnnotatedApplicationEventPublisherTest {
     static Actor admin = AnnotationUtils.createAnnotation(Actor.class, "admin");
     static Actor manager = AnnotationUtils.createAnnotation(Actor.class, "manager");
@@ -41,7 +49,7 @@ public class AnnotatedApplicationEventPublisherTest {
     @Autowired
     private EventPublisherBean eventPublisherBean;
 
-    @TestConfiguration
+    @Configuration
     public static class TestConfig {
 
         @Bean
@@ -57,6 +65,17 @@ public class AnnotatedApplicationEventPublisherTest {
         @Bean
         public EventPublisherBean eventPublisherBean(AnnotatedApplicationEventPublisher publisher) {
             return new EventPublisherBean(publisher);
+        }
+
+        //create datasource for test purpose
+        @Bean
+        public PlatformTransactionManager transactionManager() {
+            DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+            dataSourceBuilder.driverClassName("org.hsqldb.jdbc.JDBCDriver");
+            dataSourceBuilder.url("jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1");
+            dataSourceBuilder.username("SA");
+            dataSourceBuilder.password("");
+            return new DataSourceTransactionManager(dataSourceBuilder.build());
         }
     }
 
@@ -87,10 +106,13 @@ public class AnnotatedApplicationEventPublisherTest {
     }
 
     @Test
+    @Transactional
     public void testTransactionalAnnotatedEventListenerBean() {
         assertNotNull(transactionalEventListenerBean);
         List<MessageEvent> events = eventPublisherBean.createMessageEvents(9);
-        eventPublisherBean.publishEventsInTransaction(events);
+        eventPublisherBean.publishEvents(events);
+        TestTransaction.flagForCommit();
+        TestTransaction.end();
 
         //compare events number
         assertEquals(3, transactionalEventListenerBean.getAdminEvents().size());
@@ -196,42 +218,42 @@ public class AnnotatedApplicationEventPublisherTest {
         private List<AnnotatedEvent> allAnnotatedEvents = new ArrayList<>();
 
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleAdminEvent(@Actor("admin") MessageEvent event) {
             adminEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleManagerEvent(@Actor("manager") MessageEvent event) {
             managerEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleAdminDevTopicEvent(@Actor("admin") @Topic("dev") MessageEvent event) {
             adminDevTopicEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleManagerMainTopicEvent(@Actor("manager") @Topic("main") MessageEvent event) {
             managerMainTopicEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleMainTopicEvent(@Topic("main") MessageEvent event) {
             mainTopicEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleDevTopicEvent(@Topic("dev") MessageEvent event) {
             devTopicEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleAnyMessageEvent(MessageEvent event) {
             allMessageEvents.add(event);
         }
 
-        @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
+        @TransactionalEventListener
         public void handleAnyAnnotatedEvent(AnnotatedEvent event) {
             allAnnotatedEvents.add(event);
         }
@@ -253,11 +275,6 @@ public class AnnotatedApplicationEventPublisherTest {
             eventPublisher.publishEvent(events.get(7), main);
             eventPublisher.publishEvent(events.get(8));
             eventPublisher.publishEvent("string event", main);
-        }
-
-        @Transactional
-        public void publishEventsInTransaction(List<MessageEvent> events) {
-            publishEvents(events);
         }
 
         public List<MessageEvent> createMessageEvents(int count) {
